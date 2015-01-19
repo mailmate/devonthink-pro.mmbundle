@@ -10,10 +10,17 @@ url="message://%3c${MM_MESSAGE_ID}%3e"
 
 osascript <<END
 
-tell application id "DNtp"
-	set theRecord to import "${tmpfile}" from "MailMate" name "${name}"
-	set the URL of theRecord to "${url}" # Allows it to be opened in MailMate using ⌃⌘O
-end tell
+try
+	tell application id "DNtp"
+		set theRecord to import "${tmpfile}" from "MailMate" name "${name}"
+		set the URL of theRecord to "${url}" # Allows it to be opened in MailMate using ⌃⌘O
+	end tell
+on error errMsg number eNum
+	tell application "System Events"
+		activate
+		display alert "DEVONThink: " & eNum message errMsg
+	end tell
+end try
 
 END
 
