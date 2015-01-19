@@ -1,0 +1,8 @@
+{
+	name          = 'Add...';
+	input         = 'raw';
+	environment   = 'MM_SUBJECT=${subject.prefix:+${subject.prefix} }${subject.blob:+[${subject.blob}] }${subject.body:no subject}\nMM_MESSAGE_ID=${message-id.split}\n';
+	command       = '#!/bin/bash\n"${MM_BUNDLE_SUPPORT}/bin/add"';
+	keyEquivalent = "^A";
+	uuid          = 'CD68E028-9ED9-4B26-988E-D57B955A79F3';
+}

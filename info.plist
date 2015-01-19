@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>contactEmailRot13</key>
+	<string>zz-ohaqyrf@sereba.pbz</string>
+	<key>contactName</key>
+	<string>Benny Kjær Nielsen</string>
+	<key>description</key>
+	<string>Archive emails in DEVONthink Pro.</string>
+	<key>name</key>
+	<string>DEVONthink Pro</string>
+	<key>uuid</key>
+	<string>C0AAFCE0-ECEB-46CF-941E-0AE2C406B5EA</string>
+</dict>
+</plist>
