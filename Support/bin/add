@@ -3,15 +3,17 @@
 tmpfile="$TMPDIR/8D444CFE-C1F9-4F82-AD8B-4EA7EC7A77C2.eml"
 cat > "${tmpfile}"
 
-name=${MM_SUBJECT/\"/\'/}
+# Tricky substitution to make it work for " and \ in the AppleScript below.
+name=${MM_SUBJECT//\\/\\\\}
+name=${name//\"/\\\"}
 url="message://%3c${MM_MESSAGE_ID}%3e"
 
 osascript <<END
 
-	tell application id "DNtp"
-    set theRecord to import "${tmpfile}" from "MailMate" name "${name}"
-  	set the URL of theRecord to "${url}" # Allows it to be opened in MailMate using ⌃⌘O
-	end tell
+tell application id "DNtp"
+	set theRecord to import "${tmpfile}" from "MailMate" name "${name}"
+	set the URL of theRecord to "${url}" # Allows it to be opened in MailMate using ⌃⌘O
+end tell
 
 END
 
