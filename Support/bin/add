@@ -3,7 +3,7 @@
 tmpfile="$TMPDIR/8D444CFE-C1F9-4F82-AD8B-4EA7EC7A77C2.eml"
 cat > "${tmpfile}"
 
-name=`printf ${MM_SUBJECT} | sed s/\"/\'/`
+name=${MM_SUBJECT/\"/\'/}
 url="message://%3c${MM_MESSAGE_ID}%3e"
 
 osascript <<END
