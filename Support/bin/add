@@ -13,7 +13,9 @@ osascript <<END
 try
 	tell application id "DNtp"
 		set theRecord to import "${tmpfile}" from "MailMate" name "${name}"
+		set modification date of theRecord to creation date of theRecord
 		set the URL of theRecord to "${url}" # Allows it to be opened in MailMate using ⌃⌘O
+	        display notification "Added message \"${name}\" to DEVONthink" with title "MailMate"
 	end tell
 on error errMsg number eNum
 	tell application "System Events"
